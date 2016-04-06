@@ -1,0 +1,1 @@
+<h1>Primeiro projeto JSF para testes.</h1>

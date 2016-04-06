@@ -9,6 +9,8 @@ public class CarrinhoServico {
 	
 	private Usuario usuario;
 	
+	
+	
 	public String salvar() {
 		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Enviado com sucesso!",  null);

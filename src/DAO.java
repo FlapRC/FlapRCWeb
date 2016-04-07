@@ -2,7 +2,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 public class DAO {
-	
+
 	@Inject
 	private EntityManager em;
 
@@ -13,5 +13,5 @@ public class DAO {
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
-	
+
 }

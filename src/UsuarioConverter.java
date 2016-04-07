@@ -10,7 +10,7 @@ import javax.inject.Inject;
 public class UsuarioConverter implements Converter {
 	
 	@Inject
-	private DAO dao;
+	private UsuarioDAO dao;
 
 	public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
 

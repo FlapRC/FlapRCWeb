@@ -5,7 +5,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
 import javax.inject.Inject;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -21,7 +20,7 @@ public class UsuarioServico {
 	private LazyDataModel<Usuario> usuarios;
 	
 	@Inject
-	private DAO dao;
+	private UsuarioDAO dao;
 	
 	private List<Usuario> valoresComboUsuario;
 	
@@ -50,38 +49,23 @@ public class UsuarioServico {
 	
 	private List<Usuario> getListaUsuarios(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters) {
 
-		CriteriaBuilder cb = dao.getEm().getCriteriaBuilder();
-		CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
-		Root<Usuario> root = cq.from(Usuario.class);
-		cq.select(root);
-		TypedQuery<Usuario> tq = dao.getEm().createQuery(cq);
-		
-		if (pageSize >= 0) {
-			tq.setMaxResults(pageSize);
-		}
-		if (first >= 0) {
-			tq.setFirstResult(first);
-		}
-
-		return tq.getResultList();
+		return getDao().getListaUsuarios(first, pageSize, sortField, sortOrder, filters);
 
 	}
 	
 	public Integer getCountRegistros() {
 		
-		Query query = dao.getEm().createNativeQuery("select count(idUsuario) from usuario"); 
-		
-		return Integer.valueOf(query.getResultList().get(0).toString());
+		return getDao().getCountRegistros();
 		
 	}
 
 	public List<Usuario> getValoresComboUsuario() {
 		
-		CriteriaBuilder cb = dao.getEm().getCriteriaBuilder();
+		CriteriaBuilder cb = getDao().getEm().getCriteriaBuilder();
 		CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
 		Root<Usuario> root = cq.from(Usuario.class);
 		cq.select(root);
-		TypedQuery<Usuario> tq = dao.getEm().createQuery(cq);
+		TypedQuery<Usuario> tq = getDao().getEm().createQuery(cq);
 
 		valoresComboUsuario = tq.getResultList(); 
 
@@ -119,11 +103,11 @@ public class UsuarioServico {
 
 	}
 
-	public DAO getDao() {
+	public UsuarioDAO getDao() {
 		return dao;
 	}
 
-	public void setDao(DAO dao) {
+	public void setDao(UsuarioDAO dao) {
 		this.dao = dao;
 	}
 	

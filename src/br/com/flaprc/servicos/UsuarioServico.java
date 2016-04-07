@@ -53,7 +53,7 @@ public class UsuarioServico {
 	
 	private List<Usuario> getListaUsuarios(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters) {
 
-		return getDao().getListaUsuarios(first, pageSize, sortField, sortOrder, filters);
+		return getDao().pesquisarPaginado(first, pageSize, sortField, sortOrder, filters, Usuario.class);
 
 	}
 	

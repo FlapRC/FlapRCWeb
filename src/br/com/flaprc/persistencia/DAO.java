@@ -62,11 +62,11 @@ public class DAO {
 		
 		if ((sortField != null && !"".equals(sortField)) && (sortOrder != null && !"".equals(sortOrder))) {
 		
-			if (sortOrder == SortOrder.ASCENDING) {
+			if (sortOrder.equals(SortOrder.ASCENDING)) {
 		
 				cq.orderBy(cb.asc(root.get(sortField)));
 				
-			} else if (sortOrder == SortOrder.DESCENDING) {
+			} else if (sortOrder.equals(SortOrder.DESCENDING)) {
 				
 				cq.orderBy(cb.desc(root.get(sortField)));
 				

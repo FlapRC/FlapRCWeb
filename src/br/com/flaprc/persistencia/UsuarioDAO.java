@@ -1,3 +1,4 @@
+package br.com.flaprc.persistencia;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import org.primefaces.model.SortOrder;
+
+import br.com.flaprc.modelo.Usuario;
 
 public class UsuarioDAO extends DAO {
 

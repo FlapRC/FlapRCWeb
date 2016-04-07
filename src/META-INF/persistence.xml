@@ -6,7 +6,7 @@
 		<description>Savera Persistencia</description>
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:/DBFLAPRC</jta-data-source>
-		<class>Usuario</class>
+		<class>br.com.flaprc.modelo.Usuario</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		
 		<properties>

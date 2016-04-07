@@ -5,6 +5,10 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.inject.Inject;
 
+import br.com.flaprc.modelo.Usuario;
+import br.com.flaprc.persistencia.UsuarioDAO;
+import br.com.flaprc.servicos.UsuarioServico;
+
 @RequestScoped
 @ManagedBean(name = "usuarioConverter")
 public class UsuarioConverter implements Converter {

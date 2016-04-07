@@ -1,4 +1,4 @@
-import java.io.Serializable;
+package br.com.flaprc.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USUARIO")
-public class Usuario implements Serializable {
+public class Usuario extends FlapRCEntidade {
 	
 	/**
 	 * serialVersionUID.

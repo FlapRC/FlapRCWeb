@@ -1,3 +1,4 @@
+package br.com.flaprc.persistencia;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 

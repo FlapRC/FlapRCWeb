@@ -1,3 +1,4 @@
+package br.com.flaprc.servicos;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,9 @@ import javax.persistence.criteria.Root;
 
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortOrder;
+
+import br.com.flaprc.modelo.Usuario;
+import br.com.flaprc.persistencia.UsuarioDAO;
 
 @RequestScoped
 @ManagedBean(name = "usuarioServico")

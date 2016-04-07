@@ -11,7 +11,7 @@ import javax.persistence.criteria.Root;
 
 import org.primefaces.model.SortOrder;
 
-public class DAO {
+public class DAO<T> {
 
 	@Inject
 	private EntityManager em;
@@ -24,7 +24,7 @@ public class DAO {
 		this.em = em;
 	}
 	
-	public <T>List<T> pesquisarPaginado(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters, Class<T> classe) {
+	public List<T> pesquisarPaginado(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, Object> filters, Class<T> classe) {
 
 		CriteriaBuilder cb = getEm().getCriteriaBuilder();
 		
@@ -58,7 +58,7 @@ public class DAO {
 	 * @param cq CriteriaQuery<T> objeto query da criteria.
 	 * @param root Root<T>
 	 */
-	private <T> void setSort(String sortField, SortOrder sortOrder, CriteriaBuilder cb, CriteriaQuery<T> cq, Root<T> root) {
+	private void setSort(String sortField, SortOrder sortOrder, CriteriaBuilder cb, CriteriaQuery<T> cq, Root<T> root) {
 		
 		if ((sortField != null && !"".equals(sortField)) && (sortOrder != null && !"".equals(sortOrder))) {
 		

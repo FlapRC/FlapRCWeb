@@ -1,7 +1,9 @@
 package br.com.flaprc.persistencia;
 import javax.persistence.Query;
 
-public class UsuarioDAO extends DAO {
+import br.com.flaprc.modelo.Usuario;
+
+public class UsuarioDAO extends DAO<Usuario> {
 
 	public Integer getCountRegistros() {
 

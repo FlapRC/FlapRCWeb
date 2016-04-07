@@ -7,12 +7,17 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>FlapRCWeb</name>
+
+	<properties>
+		<nome.war>FlapRCWeb</nome.war>
+	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>5.1</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -56,6 +61,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
+					<webappDirectory>C:\Projetos JSF\eclipse\workspace\FlapRCWeb\target</webappDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -64,6 +70,8 @@
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<outputDirectory>C:\Projetos JSF\Jboss\standalone\deployments</outputDirectory>
+					<warName>${nome.war}</warName>
 				</configuration>
 			</plugin>
 		</plugins>

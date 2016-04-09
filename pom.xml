@@ -61,7 +61,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<webappDirectory>C:\Projetos JSF\eclipse\workspace\FlapRCWeb\target</webappDirectory>
+					<webappDirectory>${basedir}/FlapRCWeb/target</webappDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
